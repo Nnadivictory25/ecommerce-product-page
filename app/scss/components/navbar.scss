@@ -1,0 +1,131 @@
+@use '../util/breakpoints.scss' as *;
+@use '../util/functions.scss' as *;
+@use '../util/mixins.scss' as *;
+
+
+.no-scroll {
+    overflow: hidden !important;
+}
+.overlay {
+    background-color: var(--black);
+    opacity: .86;
+    z-index: 4;
+    @include transition;
+}
+
+.nav {
+
+    &__linksCtn {
+
+        &--header {
+            cursor: pointer;
+        }
+
+        ul {
+            li {
+                color: var(--g-blue);
+                position: relative !important;
+                @include transition;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    z-index: 2;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: -2.9rem;
+                    height: 4px;
+                    background-color: var(--orange);
+                    opacity: 0;
+                    transition: all .3s ease-in-out;
+                }
+
+                &:hover {
+                    color: var(--black);
+
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        #mobileNav {
+            outline: 1px solid blue;
+            width: 60%;
+            left: -100%;
+            text-align: left;
+            @include transition;
+            
+            img {
+                align-self: flex-start;
+                margin-bottom: 1rem;
+            }
+            
+            li {
+                color: var(--black) !important;
+                font-weight: 600;
+                align-self: flex-start;
+
+                &::before {
+                    display: none !important;
+                }
+
+            }
+
+            &.active {
+                left: 0;
+            }
+        }
+    }
+
+    &__cartAndUserCtn {
+        
+        #cartIcon {
+            cursor: pointer;
+            opacity: .75;
+            @include transition;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .cartQuantity {
+            background-color: var(--orange);
+        }
+
+        #avatar {
+            cursor: pointer;
+            border-radius: 100%;
+            border: none;
+            outline: 2px solid var(--white);
+            @include transition;
+
+            &:hover {
+                outline: 2px solid var(--orange) !important;
+            }
+        }
+    }
+}
+
+button {
+    background-color: var(--orange) !important;
+    @include transition;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.cartModal {
+    width: 95%;
+    max-width: rem(360);
+
+    @include breakpoint-down(small) {
+        left: 0;
+        right: 0 !important;
+        margin: auto;
+    }
+}

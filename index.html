@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce product page</title>
+
+
+  <!-- custom stylesheet + script -->
+  <link rel="stylesheet" href="/dist/style.css">
+  <script defer src="/dist/script.js"></script>
+
+  <!-- favicon img -->
+  <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+
+  <!-- bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+  <div aria-hidden="true" class="overlay invisible fixed inset-0 "></div>
+
+  <nav class="nav flex items-center justify-between lg:px-20 pt-7 lg:pb-0 pb-6 px-7 bg-white">
+    <div class="nav__linksCtn flex items-center lg:gap-x-14 gap-x-5">
+      <img id="openNav" class="hide-for-desktop" src="./images/icon-menu.svg" alt="open navbar">
+      <div class="nav__linksCtn--header">
+        <img src="./images/logo.svg" alt="">
+      </div>
+
+      <!-- desktop nav items -->
+      <ul class="flex items-center gap-x-6 hide-for-mobile">
+        <li class="font-medium">Collections</li>
+        <li class="font-medium">Men</li>
+        <li class="font-medium">Women</li>
+        <li class="font-medium">About</li>
+        <li class="font-medium">Contact</li>
+      </ul>
+
+      <!-- mobile nav items -->
+      <ul id="mobileNav"
+        class="flex flex-col inset-y-0 fixed items-center gap-y-6 hide-for-desktop bg-white px-9 pt-4 z-10">
+        <img id="closeNav" src="./images/icon-close.svg" alt="close navbar">
+        <li class="font-medium">Collections</li>
+        <li class="font-medium">Men</li>
+        <li class="font-medium">Women</li>
+        <li class="font-medium">About</li>
+        <li class="font-medium">Contact</li>
+      </ul>
+    </div>
+
+    <div class="nav__cartAndUserCtn flex items-center lg:gap-x-9 gap-x-5 relative">
+      <img id="cartIcon" src="./images/icon-cart.svg" alt="cart">
+      <div class="cartQuantity hidden absolute font-bold text-white px-2 text-xs rounded-3xl top-1 left-2">3</div>
+      <img id="avatar" class="w-11" src="./images/image-avatar.png" alt="avatar">
+    </div>
+    <hr class="bg-gray-300 absolute w-[88%] top-[6.7rem] h-[1.7px]  hide-for-mobile">
+
+
+    <!-- cart items modal -->
+    <div class="cartModal absolute right-10 bg-white rounded-2xl shadow-lg lg:top-20 top-28 overflow-hidden z-40">
+      <p class="cartModal__header text-lg font-bold p-5">Cart</p>
+      <hr class="mb-4">
+      <div class="cartModal__productInfo px-5 flex items-center justify-between py-3">
+        <img class="w-12 rounded-md" src="./images/image-product-1-thumbnail.jpg" alt="">
+
+        <div class="info">
+          <p class="text-gray-600"> Fall Limited Edition Sneakers</p>
+          <p class="priceCalc flex gap-x-1 text-gray-600">$125 x <span class="cartCalcQuantity">3</span><span class="result font-bold text-black">$375</span></p>
+        </div>
+
+        <div class="clearCartBtn cursor-pointer">
+          <img src="./images/icon-delete.svg" alt="">
+        </div>
+      </div>
+      <div class="btnCtn px-5 w-full py-3">
+        <button class="w-full text-white font-bold text-lg rounded-md py-4 my-3">Checkout</button>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <main class="lg:grid lg:mt-32 lg:px-32 gap-x- grid-cols-2 lg:mb-6">
+
+    <div class="imgCtn">
+
+      <!-- mobile image slide -->
+      <div class="imgCtn__mobileSlide relative hide-for-desktop">
+        <img id="slideImg" class="w-full h-full object-cover" src="./images/image-product-1.jpg" alt="product image">
+        <div class="prevBtn slideBtn absolute rounded-full bg-white py-4 px-5 left-4"><img
+            src="./images/icon-previous.svg" alt=""></div>
+        <div class="nextBtn slideBtn absolute rounded-full bg-white py-4 px-5 right-4"><img src="./images/icon-next.svg"
+            alt=""></div>
+      </div>
+
+      <!-- desktop image gallery -->
+      <div class="imgCtn__desktopCtn relative hide-for-mobile">
+        <div class="topImgCtn w-full mb-5">
+          <img class="rounded-2xl" id="mainDisplay" src="./images/image-product-1.jpg" alt="product image">
+        </div>
+        <div class="thumbnailsCtn flex items-center justify-between w-[86%]">
+          <img class="active rounded-2xl" src="./images/image-product-1-thumbnail.jpg" alt="">
+          <img class="rounded-2xl" src="./images/image-product-2-thumbnail.jpg" alt="">
+          <img class="rounded-2xl" src="./images/image-product-3-thumbnail.jpg" alt="">
+          <img class="rounded-2xl" src="./images/image-product-4-thumbnail.jpg" alt="">
+        </div>
+      </div>
+
+      <!-- lightbox modal for desktop -->
+      <div class="modal invisible hide-for-mobile fixed inset-0 z-50 flex flex-col justify-center mt-9">
+        <div id="closeModal" class="closeCtn absolute top-6 right-[35.5%] cursor-pointer">
+          <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#fff" fill-rule="evenodd"/></svg>
+        </div>
+        <div class="modal__topImg self-center mx-auto relative">
+          <img class="w-[43%]  mx-auto rounded-2xl" src="./images/image-product-1.jpg" alt="">
+        </div>
+        <div class="modalThumbnailsCtn flex items-center justify-center mt-7 gap-x-7 w-1/3 mx-auto container">
+          <img class="active rounded-2xl" src="./images/image-product-1-thumbnail.jpg" alt="">
+          <img class="rounded-2xl" src="./images/image-product-2-thumbnail.jpg" alt="">
+          <img class="rounded-2xl" src="./images/image-product-3-thumbnail.jpg" alt="">
+          <img class="rounded-2xl" src="./images/image-product-4-thumbnail.jpg" alt="">
+        </div>
+
+        <div class="modalPrevBtn modalBtn absolute rounded-full bg-white py-4 px-5 left-[33%]"><svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></div>
+      <div class="modalNextBtn modalBtn absolute rounded-full bg-white py-4 px-5 right-[33%]"><svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></div>
+      </div>
+
+    </div>
+ 
+    <div class="productDetails px-6 mt-4 lg:px-20 lg:mt-12">
+      <p class="productDetails__subHeader font-semibold text-sm py-1">Sneaker Company</p>
+      <h1 class="productDetails__name font-bold text-3xl py-2 lg:py-7">Fall Limited Edition Sneakers</h1>
+      <p class="productDetails__desc pb-3">
+        These low-profile sneakers are your perfect casual wear companion. Featuring a
+        durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+
+      <div class="productDetails__priceCtn flex items-center justify-between lg:block lg:py-3">
+        <div class="priceAndDisc flex items-center gap-x-3"><p class="price text-3xl font-bold">$125.00</p><p class="discount px-2 rounded-md font-semibold">50%</p></div>
+        <p class="oldPrice line-through font-semibold">$250.00</p>
+      </div>
+
+      <div class="btnsCtn mt-5 lg:flex items-center gap-x-5">
+        <div class="productDetails__quantityCtn my-2 flex items-center justify-between px-8 py-4 rounded-md lg:w-[43%]">
+          <img  src="./images/icon-minus.svg" alt="decrease quantity">
+          <p class="quantity font-bold text-lg">0</p>
+          <img src="/images/icon-plus.svg" alt="increase quantity">
+        </div>
+  
+        <button class="w-full lg:w-[55%] text-white font-bold text-lg rounded-md flex justify-center items-center py-4 my-3 gap-x-4 shadow-md"><svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#fff" fill-rule="nonzero"/></svg> Add to cart</button>
+      </div>
+    </div>
+
+  </main>
+
+
+
+</body>
+
+
+</html>

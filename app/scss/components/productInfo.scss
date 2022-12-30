@@ -1,0 +1,161 @@
+@use '../util/breakpoints.scss' as *;
+@use '../util/functions.scss' as *;
+@use '../util/mixins.scss' as *;
+
+
+main {
+
+    .modal {
+
+        &__topImg {
+
+            img {
+                width: 62vh;
+            }
+        }
+
+        .closeCtn {
+
+            svg {
+                * {
+                    @include transition;
+                }
+
+                &:hover * {
+                    fill: var(--orange)
+                }
+            }
+        }
+
+        .modalThumbnailsCtn {
+            img {
+                @include transition;
+                width: 4rem;
+                cursor: pointer;
+
+                &.active {
+                    outline: 2px solid var(--orange);
+                    opacity: .7;
+
+                    &:hover {
+                        opacity: .7 !important;
+                    }
+                }
+
+                &:hover {
+                    opacity: .8;
+                }
+            }
+        }
+
+        .modalBtn {
+            top: 40%;
+            cursor: pointer;
+
+            &:hover {
+                svg {
+                    @include transition;
+
+
+                    * {
+                        @include transition;
+                    }
+
+                    * {
+                        stroke: var(--orange);
+                    }
+                }
+            }
+
+        }
+    }
+
+    .imgCtn {
+
+        &__mobileSlide {
+            height: 47vh;
+
+            .slideBtn {
+                top: 45%;
+            }
+        }
+
+        &__desktopCtn {
+
+            .topImgCtn {
+                img {
+                    width: 86% !important;
+                    height: 70vh;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+            }
+
+
+            .thumbnailsCtn {
+
+
+                img {
+                    @include transition;
+                    width: 5.5rem;
+                    cursor: pointer;
+
+                    &.active {
+                        outline: 2px solid var(--orange);
+                        opacity: .6;
+
+                        &:hover {
+                            opacity: .6 !important;
+                        }
+                    }
+
+                    &:hover {
+                        opacity: .8;
+                    }
+                }
+            }
+        }
+    }
+
+    .productDetails {
+        &__subHeader {
+            color: var(--orange);
+            text-transform: uppercase;
+        }
+
+        &__priceCtn {
+
+            .discount {
+                color: var(--orange);
+                background-color: var(--pale-orange);
+            }
+
+            .oldPrice {
+                color: var(--dark-g-blue);
+                opacity: .6 !important;
+            }
+        }
+
+        &__quantityCtn {
+            background-color: var(--light-g-blue);
+
+            img {
+                cursor: pointer;
+                @include transition;
+
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+
+        button {
+            background-color: var(--orange);
+            @include transition;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+}
