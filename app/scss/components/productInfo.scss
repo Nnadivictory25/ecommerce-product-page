@@ -7,7 +7,6 @@ main {
 
     .modal {
         z-index: 96;
-        @include transition;
         overflow: hidden;
 
         &__topImg {
@@ -18,7 +17,7 @@ main {
         }
 
         .closeCtn {
-
+ 
             svg {
                 * {
                     @include transition;
@@ -36,7 +35,7 @@ main {
                 position: relative !important;
                 cursor: pointer;
                 border-radius: 1rem;
-                @include transition;
+                @include transition(opacity);
                 border: 2px solid hsl(0, 0%, 100%, 0);
 
 
@@ -51,12 +50,13 @@ main {
                     background-color: #fff;
                     opacity: 0;
                     border-radius: 1rem;
-                    transition: all .3s ease-in-out;
+                    @include transition(opacity);
                 }
 
                 &.active {
                     border: 2px solid var(--orange);
                     pointer-events: none;
+                    @include transition(opacity);
 
                     &::before {
                         opacity: .5;
@@ -73,7 +73,6 @@ main {
             }
 
             img {
-                @include transition;
                 width: 4rem;
                 cursor: pointer;
             }
@@ -89,7 +88,7 @@ main {
 
 
                     * {
-                        @include transition;
+                        @include transition(all);
                     }
 
                     * {
@@ -129,8 +128,8 @@ main {
                     position: relative !important;
                     cursor: pointer;
                     border-radius: 1rem;
-                    @include transition;
                     border: 2px solid #fff;
+                    @include transition(opacity);
 
                     &::before {
                         content: "";
@@ -143,7 +142,7 @@ main {
                         background-color: #fff;
                         opacity: 0;
                         border-radius: 1rem;
-                        transition: all .3s ease-in-out;
+                        @include transition;
                     }
 
                     &.active {
@@ -166,7 +165,6 @@ main {
 
 
                 img {
-                    @include transition;
                     width: 5.5rem;
                 }
             }
@@ -197,7 +195,6 @@ main {
 
             img {
                 cursor: pointer;
-                @include transition;
 
                 &:hover {
                     opacity: .7;
@@ -207,10 +204,14 @@ main {
 
         button {
             background-color: var(--orange);
-            @include transition;
+            @include transition(opacity);
 
             &:hover {
                 opacity: .7;
+            }
+
+            &:disabled {
+                cursor: not-allowed;
             }
         }
     }

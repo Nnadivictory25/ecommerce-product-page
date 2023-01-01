@@ -23,7 +23,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-
+  <!-- toastify JS css -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 
@@ -71,22 +72,9 @@
     <div class="cartModal invisible absolute right-10 bg-white rounded-2xl shadow-lg lg:top-20 top-28 overflow-hidden z-40">
       <p class="cartModal__header text-lg font-bold p-5">Cart</p>
       <hr class="mb-4">
-      <div class="cartModal__productInfo px-5 flex items-center justify-between py-3">
-        <img class="w-12 rounded-md" src="./images/image-product-1-thumbnail.jpg" alt="">
-
-        <div class="info">
-          <p class="text-gray-600"> Fall Limited Edition Sneakers</p>
-          <p class="priceCalc flex gap-x-1 text-gray-600">$125 x <span class="cartCalcQuantity">3</span><span class="result font-bold text-black">$375</span></p>
-        </div>
-
-        <div class="clearCartBtn cursor-pointer">
-          <img src="./images/icon-delete.svg" alt="">
-        </div>
+      <div class="emptyCartMsg container mx-auto text-center">
+        <p class="font-semibold text-gray-500 p-14">Your cart is empty</p>
       </div>
-      <div class="btnCtn px-5 w-full py-3">
-        <button class="w-full text-white font-bold text-lg rounded-md py-4 my-3">Checkout</button>
-      </div>
-
     </div>
   </nav>
 
@@ -170,12 +158,12 @@
 
       <div class="btnsCtn mt-5 lg:flex items-center gap-x-5">
         <div class="productDetails__quantityCtn my-2 flex items-center justify-between px-8 py-4 rounded-md lg:w-[43%]">
-          <img  src="./images/icon-minus.svg" alt="decrease quantity">
+          <img onclick="decrease()"  src="./images/icon-minus.svg" alt="decrease quantity">
           <p class="quantity font-bold text-lg">0</p>
-          <img src="/images/icon-plus.svg" alt="increase quantity">
+          <img onclick="increase()" src="/images/icon-plus.svg" alt="increase quantity">
         </div>
   
-        <button class="w-full lg:w-[55%] text-white font-bold text-lg rounded-md flex justify-center items-center py-4 my-3 gap-x-4 shadow-md"><svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#fff" fill-rule="nonzero"/></svg> Add to cart</button>
+        <button disabled="true" id="addToCart" class="w-full lg:w-[55%] text-white font-bold text-lg rounded-md flex justify-center items-center py-4 my-3 gap-x-4 shadow-md"><svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#fff" fill-rule="nonzero"/></svg> Add to cart</button>
       </div>
     </div>
 
@@ -185,5 +173,6 @@
 
 </body>
 
-
+<!-- toastify js -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </html>
