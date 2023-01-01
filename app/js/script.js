@@ -154,7 +154,6 @@ let renderImgLB = () => {
 
     LBactiveImg.classList.remove('active')
     let currTN = LBthumnailImgs.find(tn => localhost ? tn.firstElementChild.src.split('http://localhost:3000').filter(el => el !== '').join('').includes(currentImgLB) : tn.firstElementChild.src.includes(currentImgLB))
-    console.log(currTN, currentImgLB)
     currTN.classList.add('active')
     LBactiveImg = currTN
 }
