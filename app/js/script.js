@@ -123,7 +123,7 @@ let closeLBmodal = () => {
     })
 }
 
-mainImgCtn.addEventListener('click', (e) => {
+mainImg.addEventListener('click', (e) => {
     openLBmodal()
     const localhost = e.target.src.includes('http://localhost:3000')
     
@@ -139,7 +139,7 @@ mainImgCtn.addEventListener('click', (e) => {
 closeLBelems.forEach(el => {
     el.addEventListener('click', () => {
         closeLBmodal()
-    })
+    }) 
 })
 
 prevBtnLB.addEventListener('click', () => {
