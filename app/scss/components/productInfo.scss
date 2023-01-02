@@ -20,7 +20,7 @@ main {
  
             svg {
                 * {
-                    @include transition;
+                    @include transition(fill);
                 }
 
                 &:hover * {
