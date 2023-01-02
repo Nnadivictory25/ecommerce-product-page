@@ -12,7 +12,8 @@ main {
         &__topImg {
 
             img {
-                width: 62vh;
+                width: rem(415) !important;
+                object-fit: cover;
             }
         }
 
