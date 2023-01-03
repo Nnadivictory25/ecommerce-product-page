@@ -24,7 +24,7 @@
             li {
                 color: var(--g-blue);
                 position: relative !important;
-                @include transition(all);
+                @include transition(color);
                 cursor: pointer;
 
                 &::before {
