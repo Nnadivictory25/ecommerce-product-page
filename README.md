@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/Web%20capture_2-1-2023_195554_localhost.jpeg)
+![](./images/Web%20capture_3-1-2023_14623_localhost.jpeg)
 
 
 ### Links
